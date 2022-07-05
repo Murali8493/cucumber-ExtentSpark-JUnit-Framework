@@ -1,0 +1,13 @@
+package utility;
+
+import java.util.Properties;
+
+public class ConfigFileReader {
+
+	Properties properties = new Properties();
+	public String getReportConfigPath(){
+		String reportConfigPath = properties.getProperty("src\\test\\resources\\extent-config.xml");
+		if(reportConfigPath!= null) return reportConfigPath;
+		else throw new RuntimeException("Report Config Path not specified in the Configuration.properties file for the Key:reportConfigPath");		
+	}
+}

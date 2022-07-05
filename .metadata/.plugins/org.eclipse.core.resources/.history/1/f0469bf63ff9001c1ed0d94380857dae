@@ -1,0 +1,9 @@
+extent.reporter.spark.start=true
+extent.reporter.spark.out=test-Reports/SparkHtmlReport/SparkHtml.html
+extent.reporter.spark.config=src/test/resources/spark-config.xml
+#extent.reporter.spark.out=test-output/HtmlReport/
+
+screenshot.dir=test-output/screenshots/
+screenshot.rel.path=../screenshots/
+extent.reporter.pdf.start=true
+extent.reporter.pdf.out=test-output/PdfReport/ExtentPdf.pdf

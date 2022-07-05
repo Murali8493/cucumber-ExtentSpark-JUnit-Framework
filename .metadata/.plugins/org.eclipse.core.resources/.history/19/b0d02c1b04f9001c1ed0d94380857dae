@@ -1,0 +1,43 @@
+package stepDefinitions;
+
+import org.json.simple.JSONObject;
+
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import utility.BaseClass;
+import utility.Constrants;
+
+public class Login extends BaseClass{
+
+	@Given("tekExperience app to login")
+	public void tek_experience_app_to_login() throws Exception 
+	{
+		JSONObject jsonEntireObject =reasJsonData(Constrants.urlsPath);
+		
+		String browser = (String) jsonEntireObject.get("Browser");
+	    System.out.println(browser);
+		
+		
+		//launchBrowser("Chrome");
+	}
+
+	@Then("enter username {string}")
+	public void enter_username(String string)
+	{
+        
+		
+	}
+
+	@And("click on login button")
+	public void click_on_login_button() {
+		System.out.println("Hello");
+
+	}
+
+	@Then("Verify the user login")
+	public void verify_the_user_login() {
+		System.out.println("Hello");
+
+	}
+}

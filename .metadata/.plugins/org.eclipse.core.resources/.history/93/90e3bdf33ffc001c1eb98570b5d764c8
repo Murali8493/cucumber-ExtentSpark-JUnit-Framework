@@ -1,0 +1,27 @@
+package stepDefinitions;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
+import com.aventstack.extentreports.ExtentTest;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
+import utility.BaseClass;
+
+public class Hook extends BaseClass {
+	
+//	public String getScreenshot()
+//	{
+//		return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+//	}
+	
+	@After
+	public void quitBrowser(Scenario scenario) throws Exception
+	{
+		final byte[] screenshot =  ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+		scenario.attach(screenshot, "image/png", "image");
+		driver.quit();
+	}
+
+}

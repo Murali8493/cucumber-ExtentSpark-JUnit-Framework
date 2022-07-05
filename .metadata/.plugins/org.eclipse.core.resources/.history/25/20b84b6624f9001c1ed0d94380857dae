@@ -1,0 +1,60 @@
+package pageFactor;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
+
+public class LoginPage {
+
+	 @FindBy(how = How.XPATH, using = "//div[text() = 'TEKxperience']")
+	    WebElement option_TeKXperience;
+	
+	 @FindBy(how = How.XPATH, using = "//input[@id='hrone-username']")
+	    WebElement username_TxtBox;
+	
+	 @FindBy(how = How.XPATH, using = "//span[contains(text(),'NEXT')]")
+	    WebElement next_Btn;
+	 
+	 @FindBy(how = How.XPATH, using = "//input[@type='email']")
+	    WebElement email_TxtBox;
+	   
+	 @FindBy(how = How.XPATH, using = "//input[@id='idSIButton9']")
+	    WebElement Next_Btn;
+	 
+	 @FindBy(how = How.XPATH, using = "//input[@id='i0118']")
+	    WebElement password_Btn;
+	 
+//	 public void select_TekXperience()
+//	 {
+//		 option_TeKXperience.click();
+//	 }
+	 public void enterUserName(String userName)
+	 {
+		 username_TxtBox.sendKeys(userName);
+	 }
+	 public void clickLoginBtn()
+	 {
+		 next_Btn.click();
+	 }
+	 
+	 public void enter_Email(String email, String password) throws Exception
+	 {
+		 if(email_TxtBox.isDisplayed())
+		 {
+			 email_TxtBox.sendKeys(email);
+			 Thread.sleep(1000);
+			 Next_Btn.click();
+			 Thread.sleep(3000);
+			 password_Btn.sendKeys(password);
+			 Next_Btn.click();
+			 Next_Btn.click();
+			 
+				Thread.sleep(1000000);
+
+
+		 }
+	 }
+	 
+}

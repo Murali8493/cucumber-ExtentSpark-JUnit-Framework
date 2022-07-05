@@ -1,0 +1,9 @@
+Feature: Feature to test login functionality of tekExperience app
+
+  Scenario: To login into tekExperience app with valid credentials
+    Given tekExperience app "https://app.hrone.cloud/login" to login
+    Then enter username "musara@teksystems.com"
+    And click on login button
+    Then Verify the user login 
+    And convert 
+    

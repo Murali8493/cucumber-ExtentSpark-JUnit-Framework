@@ -1,0 +1,9 @@
+{
+    
+    "Browser" : "Chrome" ,
+    
+    "URLS" : {
+             "QA":"https://app.hrone.cloud/login"
+             }
+    
+}

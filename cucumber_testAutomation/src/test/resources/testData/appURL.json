@@ -1,0 +1,12 @@
+{
+    
+    "Browser" : "Chrome" ,
+    
+    "URLS" : {
+             "QA":"https://app.hrone.cloud/login" ,
+             
+             "QA1":"https://allegiscloud.sharepoint.com/teams/TEKOne/SitePages/home.aspx"
+             
+             }
+    
+}

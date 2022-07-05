@@ -1,0 +1,55 @@
+package utility;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class BaseClass {
+
+	public static WebDriver driver;
+	
+	public void launchBrowser(String browserName) throws Exception
+	{
+		if(browserName.equalsIgnoreCase("Chrome"))
+		{
+			WebDriverManager.chromedriver().setup();
+			 driver=new ChromeDriver();
+		}
+		if(browserName.equalsIgnoreCase("Edge"))
+		{
+			WebDriverManager.edgedriver().setup();
+			 driver=new EdgeDriver();
+		}
+		if(browserName.equalsIgnoreCase("FireFox"))
+		{
+			WebDriverManager.firefoxdriver().setup();
+			 driver=new FirefoxDriver();
+		}
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		driver.get("https://app.hrone.cloud/login");
+		Thread.sleep(3000);
+	}
+	
+
+	@Beforeclass
+	public void setExtent_Reports()
+	{
+		extent_HTMLreporter=new ExtentHtmlReporter(System.getProperty("user.dir")+"/Extent_report/extentreport_"+readData.ONLY_DATE_FORMAT_NOW.format(new Date())+"/extentreport_"+readData.DATE_FORMAT_NOW.format(new Date())+".html");
+
+		extent_HTMLreporter.config().setDocumentTitle("Extent Report");
+		extent_HTMLreporter.config().setReportName("EA Fussion Application TestReport");
+		extent_HTMLreporter.config().setTheme(Theme.DARK);
+
+		extent_Reports =new ExtentReports();
+		extent_Reports.attachReporter(extent_HTMLreporter);
+		extent_Reports.setSystemInfo("Environment", "Test");
+		extent_Reports.setSystemInfo("Application Name", "EA Fussion");
+		extent_Reports.setSystemInfo("Browser", "Chrome");
+	}
+}

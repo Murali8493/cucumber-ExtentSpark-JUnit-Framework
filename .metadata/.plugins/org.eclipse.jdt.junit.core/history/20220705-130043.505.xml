@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="cucumber_testAutomation" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="stepDefinitions.TestRunner" time="8.644">
+    <testsuite name="Feature to test login functionality of tekExperience app #1" time="8.644">
+      <testcase name="To login into tekExperience app with valid credentials" classname="Feature to test login functionality of tekExperience app #1" time="8.644">
+        <error>java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1&#13;
+	at utility.BaseClass.switchWindowOrTab(BaseClass.java:57)&#13;
+	at stepDefinitions.Login.click_on_login_button(Login.java:59)&#13;
+	at ✽.click on login button(file:///D:/tek_workspace/cucumber_testAutomation/src/test/resources/features/login.feature:8)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

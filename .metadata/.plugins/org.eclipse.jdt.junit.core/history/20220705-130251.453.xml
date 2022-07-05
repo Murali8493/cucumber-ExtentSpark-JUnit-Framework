@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="cucumber_testAutomation" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="stepDefinitions.TestRunner" time="25.703">
+    <testsuite name="Feature to test login functionality of tekExperience app #1" time="25.703">
+      <testcase name="To login into tekExperience app with valid credentials" classname="Feature to test login functionality of tekExperience app #1" time="25.703"/>
+    </testsuite>
+  </testsuite>
+</testrun>
